@@ -1,0 +1,18 @@
+{
+  "server": {
+    "port": 3000,
+    "chunkSize": 2000,
+    "maxRetries": 3,
+    "retryDelay": 2000,
+    "requestTimeout": 300000,
+    "batchDelay": 1000
+  },
+  "ollama": {
+    "url": "http://127.0.0.1:11434/api/generate",
+    "model": "deepseek-v3.1:671b-cloud"
+  },
+  "backup": {
+    "enabled": true,
+    "interval": 10
+  }
+}

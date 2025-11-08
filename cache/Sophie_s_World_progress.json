@@ -1,0 +1,17 @@
+{
+  "bookName": "Sophie_s_World",
+  "totalChunks": 479,
+  "completedChunks": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "failedChunks": [],
+  "retriedChunks": {},
+  "qualityIssues": [],
+  "startedAt": "2025-11-08T20:33:04.552Z",
+  "lastUpdated": "2025-11-08T20:51:02.011Z",
+  "textHash": "7e963cd34aaeac2e31f8718af4324553"
+}
