@@ -16,7 +16,7 @@ const OUTPUT_DIR = path.join(__dirname, "translations");
 const CLEANED_DIR = path.join(__dirname, "cleaned_texts");
 const BACKUP_DIR = path.join(__dirname, "backups");
 const LOGS_DIR = path.join(__dirname, "logs");
-const DEBUG_DIR = path.join(__dirname, "sample");
+
 // Configuration
 const CONFIG = {
   chunkSize: 2000,
@@ -28,7 +28,9 @@ const CONFIG = {
   ollamaModel: "deepseek-v3.1:671b-cloud",
   autoBackup: true,
   backupInterval: 10, // Backup every 10 chunks
-  // debugMode: true,
+  rotateIP: true,
+  proxyService: "free-proxy-list",
+  rotateAfterChunks: 5,
 };
 
 // Initialize directories
@@ -206,6 +208,67 @@ async function createBackup(bookName, chunkNumber) {
   }
 }
 
+// Get current proxy agent
+function getProxyAgent() {
+  if (!CONFIG.rotateIP || CONFIG.proxyService === "none") {
+    return null;
+  }
+
+  if (CONFIG.proxyService === "tor") {
+    const proxy = PROXY_SOURCES.tor;
+    const proxyUrl = `socks5://${proxy.host}:${proxy.port}`;
+    return new SocksProxyAgent(proxyUrl);
+  }
+
+  // Free proxy list rotation
+  if (PROXY_SOURCES.freeProxyList.length > 0) {
+    const proxy = PROXY_SOURCES.freeProxyList[currentProxyIndex];
+    const proxyUrl = `http://${proxy.host}:${proxy.port}`;
+    return new HttpsProxyAgent.HttpsProxyAgent(proxyUrl);
+  }
+
+  return null;
+}
+
+// Rotate to next proxy
+function rotateProxy() {
+  if (CONFIG.proxyService === "tor") {
+    // TOR automatically rotates circuits
+    console.log("🔄 TOR circuit will rotate automatically");
+    return;
+  }
+
+  // Rotate through free proxy list
+  currentProxyIndex =
+    (currentProxyIndex + 1) % PROXY_SOURCES.freeProxyList.length;
+  console.log(`🔄 Rotated to proxy #${currentProxyIndex + 1}`);
+}
+
+// Fetch free proxies (fallback option)
+async function fetchFreeProxies() {
+  try {
+    // Using free-proxy-list.net API
+    const response = await axios.get(
+      "https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=5000&country=all&ssl=all&anonymity=all"
+    );
+    const proxies = response.data
+      .split("\n")
+      .filter((p) => p.trim())
+      .slice(0, 20);
+
+    PROXY_SOURCES.freeProxyList = proxies.map((proxy) => {
+      const [host, port] = proxy.split(":");
+      return { host, port, type: "http" };
+    });
+
+    console.log(
+      `✅ Fetched ${PROXY_SOURCES.freeProxyList.length} free proxies`
+    );
+  } catch (error) {
+    console.log("⚠️  Failed to fetch free proxies, continuing without proxy");
+  }
+}
+
 // Retry mechanism for API calls
 async function callOllamaWithRetry(
   prompt,
@@ -287,6 +350,9 @@ function validateTranslation(original, translation) {
     issues,
   };
 }
+
+// Note: buildTranslationPrompt is now imported from prompt.js
+// No need to define it here anymore
 
 // Main translation endpoint
 app.post("/save-and-translate", async (req, res) => {
@@ -494,8 +560,7 @@ ${chunk.text}
 
         if (translation && translation.trim()) {
           // Add chunk separator for clarity
-          // const separator = `\n\n--- Chunk ${chunkNumber} ---\n\n`;
-          const separator = "";
+          const separator = `\n\n--- Chunk ${chunkNumber} ---\n\n`;
           await fs.appendFile(
             outputFile,
             separator + translation.trim() + "\n\n",
