@@ -494,7 +494,8 @@ ${chunk.text}
 
         if (translation && translation.trim()) {
           // Add chunk separator for clarity
-          const separator = `\n\n--- Chunk ${chunkNumber} ---\n\n`;
+          // const separator = `\n\n--- Chunk ${chunkNumber} ---\n\n`;
+          const separator = "";
           await fs.appendFile(
             outputFile,
             separator + translation.trim() + "\n\n",
