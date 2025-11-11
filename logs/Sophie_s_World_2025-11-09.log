@@ -1005,3 +1005,226 @@
 {"timestamp":"2025-11-09T18:13:34.343Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 2/3)","data":{"chunk":178,"error":"Request failed with status code 429"}}
 {"timestamp":"2025-11-09T18:13:34.346Z","level":"INFO","bookName":"Sophie_s_World","message":"Retrying in 4000ms...","data":null}
 {"timestamp":"2025-11-09T18:13:38.349Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 3/3 for chunk 178","data":null}
+{"timestamp":"2025-11-09T18:43:13.437Z","level":"INFO","bookName":"Sophie_s_World","message":"Translation process started","data":null}
+{"timestamp":"2025-11-09T18:43:13.471Z","level":"INFO","bookName":"Sophie_s_World","message":"RESUME MODE ACTIVATED","data":{"total":479,"completed":177,"remaining":302}}
+{"timestamp":"2025-11-09T18:43:13.554Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 178","data":null}
+{"timestamp":"2025-11-09T18:43:29.585Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":178,"total":479}}
+{"timestamp":"2025-11-09T18:43:30.588Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 179","data":null}
+{"timestamp":"2025-11-09T18:44:05.423Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":179,"total":479}}
+{"timestamp":"2025-11-09T18:44:06.430Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 180","data":null}
+{"timestamp":"2025-11-09T18:44:23.752Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":180,"total":479}}
+{"timestamp":"2025-11-09T18:44:24.761Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 181","data":null}
+{"timestamp":"2025-11-09T18:44:45.358Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":181,"total":479}}
+{"timestamp":"2025-11-09T18:44:46.371Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 182","data":null}
+{"timestamp":"2025-11-09T18:45:01.368Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":182,"total":479}}
+{"timestamp":"2025-11-09T18:45:02.373Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 183","data":null}
+{"timestamp":"2025-11-09T18:45:23.145Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":183,"total":479}}
+{"timestamp":"2025-11-09T18:45:24.158Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 184","data":null}
+{"timestamp":"2025-11-09T18:45:42.006Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":184,"total":479}}
+{"timestamp":"2025-11-09T18:45:43.024Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 185","data":null}
+{"timestamp":"2025-11-09T18:45:58.985Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":185,"total":479}}
+{"timestamp":"2025-11-09T18:46:00.001Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 186","data":null}
+{"timestamp":"2025-11-09T18:46:16.909Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":186,"total":479}}
+{"timestamp":"2025-11-09T18:46:17.918Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 187","data":null}
+{"timestamp":"2025-11-09T18:46:41.989Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":187,"total":479}}
+{"timestamp":"2025-11-09T18:46:42.000Z","level":"INFO","bookName":"Sophie_s_World","message":"Backup created at chunk 187","data":null}
+{"timestamp":"2025-11-09T18:46:43.006Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 188","data":null}
+{"timestamp":"2025-11-09T18:47:04.823Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":188,"total":479}}
+{"timestamp":"2025-11-09T18:47:05.835Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 189","data":null}
+{"timestamp":"2025-11-09T18:47:19.125Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":189,"total":479}}
+{"timestamp":"2025-11-09T18:47:20.135Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 190","data":null}
+{"timestamp":"2025-11-09T18:47:53.234Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":190,"total":479}}
+{"timestamp":"2025-11-09T18:47:54.241Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 191","data":null}
+{"timestamp":"2025-11-09T18:48:19.268Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":191,"total":479}}
+{"timestamp":"2025-11-09T18:48:20.277Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 192","data":null}
+{"timestamp":"2025-11-09T18:48:34.834Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":192,"total":479}}
+{"timestamp":"2025-11-09T18:48:35.848Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 193","data":null}
+{"timestamp":"2025-11-09T18:48:49.341Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":193,"total":479}}
+{"timestamp":"2025-11-09T18:48:50.361Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 194","data":null}
+{"timestamp":"2025-11-09T18:49:16.922Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":194,"total":479}}
+{"timestamp":"2025-11-09T18:49:17.939Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 195","data":null}
+{"timestamp":"2025-11-09T18:52:03.288Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 1/3)","data":{"chunk":195,"error":"Request failed with status code 500"}}
+{"timestamp":"2025-11-09T18:52:03.369Z","level":"INFO","bookName":"Sophie_s_World","message":"Retrying in 2000ms...","data":null}
+{"timestamp":"2025-11-09T18:52:05.405Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 2/3 for chunk 195","data":null}
+{"timestamp":"2025-11-09T18:53:46.408Z","level":"INFO","bookName":"Sophie_s_World","message":"Translation process started","data":null}
+{"timestamp":"2025-11-09T18:53:46.429Z","level":"INFO","bookName":"Sophie_s_World","message":"RESUME MODE ACTIVATED","data":{"total":479,"completed":194,"remaining":285}}
+{"timestamp":"2025-11-09T18:53:46.531Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 195","data":null}
+{"timestamp":"2025-11-09T18:54:00.569Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":195,"total":479}}
+{"timestamp":"2025-11-09T18:54:01.580Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 196","data":null}
+{"timestamp":"2025-11-09T18:54:20.637Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":196,"total":479}}
+{"timestamp":"2025-11-09T18:54:21.646Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 197","data":null}
+{"timestamp":"2025-11-09T18:54:38.915Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":197,"total":479}}
+{"timestamp":"2025-11-09T18:54:39.930Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 198","data":null}
+{"timestamp":"2025-11-09T18:54:57.905Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":198,"total":479}}
+{"timestamp":"2025-11-09T18:54:58.919Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 199","data":null}
+{"timestamp":"2025-11-09T18:55:17.460Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":199,"total":479}}
+{"timestamp":"2025-11-09T18:55:18.467Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 200","data":null}
+{"timestamp":"2025-11-09T18:55:34.566Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":200,"total":479}}
+{"timestamp":"2025-11-09T18:55:35.585Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 201","data":null}
+{"timestamp":"2025-11-09T18:55:52.112Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":201,"total":479}}
+{"timestamp":"2025-11-09T18:55:53.116Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 202","data":null}
+{"timestamp":"2025-11-09T18:56:15.629Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":202,"total":479}}
+{"timestamp":"2025-11-09T18:56:16.644Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 203","data":null}
+{"timestamp":"2025-11-09T18:56:32.113Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":203,"total":479}}
+{"timestamp":"2025-11-09T18:56:33.120Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 204","data":null}
+{"timestamp":"2025-11-09T18:56:49.673Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":204,"total":479}}
+{"timestamp":"2025-11-09T18:56:49.684Z","level":"INFO","bookName":"Sophie_s_World","message":"Backup created at chunk 204","data":null}
+{"timestamp":"2025-11-09T18:56:50.685Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 205","data":null}
+{"timestamp":"2025-11-09T18:57:05.397Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":205,"total":479}}
+{"timestamp":"2025-11-09T18:57:06.405Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 206","data":null}
+{"timestamp":"2025-11-09T18:57:24.542Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":206,"total":479}}
+{"timestamp":"2025-11-09T18:57:25.547Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 207","data":null}
+{"timestamp":"2025-11-09T18:57:44.913Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":207,"total":479}}
+{"timestamp":"2025-11-09T18:57:45.916Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 208","data":null}
+{"timestamp":"2025-11-09T18:58:07.957Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":208,"total":479}}
+{"timestamp":"2025-11-09T18:58:08.964Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 209","data":null}
+{"timestamp":"2025-11-09T18:58:38.471Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":209,"total":479}}
+{"timestamp":"2025-11-09T18:58:39.485Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 210","data":null}
+{"timestamp":"2025-11-09T18:58:57.832Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":210,"total":479}}
+{"timestamp":"2025-11-09T18:58:58.840Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 211","data":null}
+{"timestamp":"2025-11-09T18:59:17.898Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":211,"total":479}}
+{"timestamp":"2025-11-09T18:59:18.915Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 212","data":null}
+{"timestamp":"2025-11-09T18:59:42.474Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":212,"total":479}}
+{"timestamp":"2025-11-09T18:59:43.489Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 213","data":null}
+{"timestamp":"2025-11-09T19:00:03.771Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":213,"total":479}}
+{"timestamp":"2025-11-09T19:00:04.786Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 214","data":null}
+{"timestamp":"2025-11-09T19:00:24.560Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":214,"total":479}}
+{"timestamp":"2025-11-09T19:00:24.566Z","level":"INFO","bookName":"Sophie_s_World","message":"Backup created at chunk 214","data":null}
+{"timestamp":"2025-11-09T19:00:25.570Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 215","data":null}
+{"timestamp":"2025-11-09T19:00:40.943Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":215,"total":479}}
+{"timestamp":"2025-11-09T19:00:41.948Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 216","data":null}
+{"timestamp":"2025-11-09T19:01:18.011Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":216,"total":479}}
+{"timestamp":"2025-11-09T19:01:19.027Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 217","data":null}
+{"timestamp":"2025-11-09T19:01:43.195Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":217,"total":479}}
+{"timestamp":"2025-11-09T19:01:44.212Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 218","data":null}
+{"timestamp":"2025-11-09T19:02:03.827Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":218,"total":479}}
+{"timestamp":"2025-11-09T19:02:04.836Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 219","data":null}
+{"timestamp":"2025-11-09T19:02:20.884Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":219,"total":479}}
+{"timestamp":"2025-11-09T19:02:21.903Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 220","data":null}
+{"timestamp":"2025-11-09T19:02:46.181Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":220,"total":479}}
+{"timestamp":"2025-11-09T19:02:47.197Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 221","data":null}
+{"timestamp":"2025-11-09T19:03:02.564Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":221,"total":479}}
+{"timestamp":"2025-11-09T19:03:03.581Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 222","data":null}
+{"timestamp":"2025-11-09T19:03:17.001Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":222,"total":479}}
+{"timestamp":"2025-11-09T19:03:18.009Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 223","data":null}
+{"timestamp":"2025-11-09T19:03:33.791Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":223,"total":479}}
+{"timestamp":"2025-11-09T19:03:34.802Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 224","data":null}
+{"timestamp":"2025-11-09T19:03:46.082Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":224,"total":479}}
+{"timestamp":"2025-11-09T19:03:46.126Z","level":"INFO","bookName":"Sophie_s_World","message":"Backup created at chunk 224","data":null}
+{"timestamp":"2025-11-09T19:03:47.136Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 225","data":null}
+{"timestamp":"2025-11-09T19:04:11.267Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":225,"total":479}}
+{"timestamp":"2025-11-09T19:04:12.285Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 226","data":null}
+{"timestamp":"2025-11-09T19:04:34.307Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":226,"total":479}}
+{"timestamp":"2025-11-09T19:04:35.325Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 227","data":null}
+{"timestamp":"2025-11-09T19:04:55.403Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":227,"total":479}}
+{"timestamp":"2025-11-09T19:04:56.408Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 228","data":null}
+{"timestamp":"2025-11-09T19:05:14.349Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":228,"total":479}}
+{"timestamp":"2025-11-09T19:05:15.353Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 229","data":null}
+{"timestamp":"2025-11-09T19:05:31.039Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":229,"total":479}}
+{"timestamp":"2025-11-09T19:05:32.051Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 230","data":null}
+{"timestamp":"2025-11-09T19:05:49.163Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":230,"total":479}}
+{"timestamp":"2025-11-09T19:05:50.181Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 231","data":null}
+{"timestamp":"2025-11-09T19:06:04.524Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":231,"total":479}}
+{"timestamp":"2025-11-09T19:06:05.536Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 232","data":null}
+{"timestamp":"2025-11-09T19:06:26.641Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":232,"total":479}}
+{"timestamp":"2025-11-09T19:06:27.648Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 233","data":null}
+{"timestamp":"2025-11-09T19:06:46.811Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":233,"total":479}}
+{"timestamp":"2025-11-09T19:06:47.829Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 234","data":null}
+{"timestamp":"2025-11-09T19:07:08.969Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":234,"total":479}}
+{"timestamp":"2025-11-09T19:07:08.976Z","level":"INFO","bookName":"Sophie_s_World","message":"Backup created at chunk 234","data":null}
+{"timestamp":"2025-11-09T19:07:09.989Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 235","data":null}
+{"timestamp":"2025-11-09T19:07:27.675Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":235,"total":479}}
+{"timestamp":"2025-11-09T19:07:28.690Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 236","data":null}
+{"timestamp":"2025-11-09T19:07:48.462Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":236,"total":479}}
+{"timestamp":"2025-11-09T19:07:49.482Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 237","data":null}
+{"timestamp":"2025-11-09T19:08:04.635Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":237,"total":479}}
+{"timestamp":"2025-11-09T19:08:05.643Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 238","data":null}
+{"timestamp":"2025-11-09T19:08:22.964Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":238,"total":479}}
+{"timestamp":"2025-11-09T19:08:23.973Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 239","data":null}
+{"timestamp":"2025-11-09T19:08:42.523Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":239,"total":479}}
+{"timestamp":"2025-11-09T19:08:43.537Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 240","data":null}
+{"timestamp":"2025-11-09T19:08:56.960Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":240,"total":479}}
+{"timestamp":"2025-11-09T19:08:57.967Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 241","data":null}
+{"timestamp":"2025-11-09T19:09:17.240Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":241,"total":479}}
+{"timestamp":"2025-11-09T19:09:18.248Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 242","data":null}
+{"timestamp":"2025-11-09T19:09:33.722Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":242,"total":479}}
+{"timestamp":"2025-11-09T19:09:34.729Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 243","data":null}
+{"timestamp":"2025-11-09T19:09:52.153Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":243,"total":479}}
+{"timestamp":"2025-11-09T19:09:53.172Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 244","data":null}
+{"timestamp":"2025-11-09T19:10:11.500Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":244,"total":479}}
+{"timestamp":"2025-11-09T19:10:11.504Z","level":"INFO","bookName":"Sophie_s_World","message":"Backup created at chunk 244","data":null}
+{"timestamp":"2025-11-09T19:10:12.521Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 245","data":null}
+{"timestamp":"2025-11-09T19:10:27.889Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":245,"total":479}}
+{"timestamp":"2025-11-09T19:10:28.895Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 246","data":null}
+{"timestamp":"2025-11-09T19:11:07.929Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":246,"total":479}}
+{"timestamp":"2025-11-09T19:11:08.943Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 247","data":null}
+{"timestamp":"2025-11-09T19:11:27.040Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":247,"total":479}}
+{"timestamp":"2025-11-09T19:11:28.044Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 248","data":null}
+{"timestamp":"2025-11-09T19:11:52.985Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":248,"total":479}}
+{"timestamp":"2025-11-09T19:11:53.993Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 249","data":null}
+{"timestamp":"2025-11-09T19:12:09.568Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":249,"total":479}}
+{"timestamp":"2025-11-09T19:12:10.573Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 250","data":null}
+{"timestamp":"2025-11-09T19:12:26.197Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":250,"total":479}}
+{"timestamp":"2025-11-09T19:12:27.204Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 251","data":null}
+{"timestamp":"2025-11-09T19:12:52.276Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":251,"total":479}}
+{"timestamp":"2025-11-09T19:12:53.282Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 252","data":null}
+{"timestamp":"2025-11-09T19:13:07.563Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":252,"total":479}}
+{"timestamp":"2025-11-09T19:13:08.577Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 253","data":null}
+{"timestamp":"2025-11-09T19:13:25.552Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":253,"total":479}}
+{"timestamp":"2025-11-09T19:13:26.563Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 254","data":null}
+{"timestamp":"2025-11-09T19:13:42.451Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":254,"total":479}}
+{"timestamp":"2025-11-09T19:13:42.456Z","level":"INFO","bookName":"Sophie_s_World","message":"Backup created at chunk 254","data":null}
+{"timestamp":"2025-11-09T19:13:43.472Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 255","data":null}
+{"timestamp":"2025-11-09T19:13:57.190Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":255,"total":479}}
+{"timestamp":"2025-11-09T19:13:58.200Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 256","data":null}
+{"timestamp":"2025-11-09T19:14:10.095Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":256,"total":479}}
+{"timestamp":"2025-11-09T19:14:11.115Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 257","data":null}
+{"timestamp":"2025-11-09T19:14:28.016Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":257,"total":479}}
+{"timestamp":"2025-11-09T19:14:29.062Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 258","data":null}
+{"timestamp":"2025-11-09T19:15:03.140Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":258,"total":479}}
+{"timestamp":"2025-11-09T19:15:04.151Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 259","data":null}
+{"timestamp":"2025-11-09T19:15:24.950Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":259,"total":479}}
+{"timestamp":"2025-11-09T19:15:25.955Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 260","data":null}
+{"timestamp":"2025-11-09T19:15:44.407Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":260,"total":479}}
+{"timestamp":"2025-11-09T19:15:45.421Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 261","data":null}
+{"timestamp":"2025-11-09T19:16:03.453Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":261,"total":479}}
+{"timestamp":"2025-11-09T19:16:04.473Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 262","data":null}
+{"timestamp":"2025-11-09T19:16:18.918Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":262,"total":479}}
+{"timestamp":"2025-11-09T19:16:19.933Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 263","data":null}
+{"timestamp":"2025-11-09T19:16:48.717Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":263,"total":479}}
+{"timestamp":"2025-11-09T19:16:49.726Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 264","data":null}
+{"timestamp":"2025-11-09T19:16:50.080Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 1/3)","data":{"chunk":264,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:16:50.082Z","level":"INFO","bookName":"Sophie_s_World","message":"Retrying in 2000ms...","data":null}
+{"timestamp":"2025-11-09T19:16:52.094Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 2/3 for chunk 264","data":null}
+{"timestamp":"2025-11-09T19:16:52.496Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 2/3)","data":{"chunk":264,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:16:52.499Z","level":"INFO","bookName":"Sophie_s_World","message":"Retrying in 4000ms...","data":null}
+{"timestamp":"2025-11-09T19:16:56.508Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 3/3 for chunk 264","data":null}
+{"timestamp":"2025-11-09T19:16:56.899Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 3/3)","data":{"chunk":264,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:16:56.903Z","level":"ERROR","bookName":"Sophie_s_World","message":"Chunk 264 failed","data":{"error":"Request failed with status code 429","stack":"AxiosError: Request failed with status code 429\n    at settle (C:\\Users\\Dell\\Desktop\\Book-ai\\node_modules\\axios\\dist\\node\\axios.cjs:2106:12)\n    at IncomingMessage.handleStreamEnd (C:\\Users\\Dell\\Desktop\\Book-ai\\node_modules\\axios\\dist\\node\\axios.cjs:3491:11)\n    at IncomingMessage.emit (node:events:530:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\Dell\\Desktop\\Book-ai\\node_modules\\axios\\dist\\node\\axios.cjs:4731:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async callOllamaWithRetry (C:\\Users\\Dell\\Desktop\\Book-ai\\server.js:287:24)\n    at async C:\\Users\\Dell\\Desktop\\Book-ai\\server.js:537:29"}}
+{"timestamp":"2025-11-09T19:16:56.911Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":263,"total":479}}
+{"timestamp":"2025-11-09T19:16:56.916Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 265","data":null}
+{"timestamp":"2025-11-09T19:16:57.314Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 1/3)","data":{"chunk":265,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:16:57.317Z","level":"INFO","bookName":"Sophie_s_World","message":"Retrying in 2000ms...","data":null}
+{"timestamp":"2025-11-09T19:16:59.320Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 2/3 for chunk 265","data":null}
+{"timestamp":"2025-11-09T19:16:59.765Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 2/3)","data":{"chunk":265,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:16:59.767Z","level":"INFO","bookName":"Sophie_s_World","message":"Retrying in 4000ms...","data":null}
+{"timestamp":"2025-11-09T19:17:03.771Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 3/3 for chunk 265","data":null}
+{"timestamp":"2025-11-09T19:17:04.169Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 3/3)","data":{"chunk":265,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:17:04.172Z","level":"ERROR","bookName":"Sophie_s_World","message":"Chunk 265 failed","data":{"error":"Request failed with status code 429","stack":"AxiosError: Request failed with status code 429\n    at settle (C:\\Users\\Dell\\Desktop\\Book-ai\\node_modules\\axios\\dist\\node\\axios.cjs:2106:12)\n    at IncomingMessage.handleStreamEnd (C:\\Users\\Dell\\Desktop\\Book-ai\\node_modules\\axios\\dist\\node\\axios.cjs:3491:11)\n    at IncomingMessage.emit (node:events:530:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\Dell\\Desktop\\Book-ai\\node_modules\\axios\\dist\\node\\axios.cjs:4731:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async callOllamaWithRetry (C:\\Users\\Dell\\Desktop\\Book-ai\\server.js:287:24)\n    at async C:\\Users\\Dell\\Desktop\\Book-ai\\server.js:537:29"}}
+{"timestamp":"2025-11-09T19:17:04.180Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":263,"total":479}}
+{"timestamp":"2025-11-09T19:17:04.184Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 266","data":null}
+{"timestamp":"2025-11-09T19:17:04.580Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 1/3)","data":{"chunk":266,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:17:04.583Z","level":"INFO","bookName":"Sophie_s_World","message":"Retrying in 2000ms...","data":null}
+{"timestamp":"2025-11-09T19:17:06.602Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 2/3 for chunk 266","data":null}
+{"timestamp":"2025-11-09T19:17:07.036Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 2/3)","data":{"chunk":266,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:17:07.039Z","level":"INFO","bookName":"Sophie_s_World","message":"Retrying in 4000ms...","data":null}
+{"timestamp":"2025-11-09T19:17:11.050Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 3/3 for chunk 266","data":null}
+{"timestamp":"2025-11-09T19:17:11.410Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 3/3)","data":{"chunk":266,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:17:11.412Z","level":"ERROR","bookName":"Sophie_s_World","message":"Chunk 266 failed","data":{"error":"Request failed with status code 429","stack":"AxiosError: Request failed with status code 429\n    at settle (C:\\Users\\Dell\\Desktop\\Book-ai\\node_modules\\axios\\dist\\node\\axios.cjs:2106:12)\n    at IncomingMessage.handleStreamEnd (C:\\Users\\Dell\\Desktop\\Book-ai\\node_modules\\axios\\dist\\node\\axios.cjs:3491:11)\n    at IncomingMessage.emit (node:events:530:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\Dell\\Desktop\\Book-ai\\node_modules\\axios\\dist\\node\\axios.cjs:4731:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async callOllamaWithRetry (C:\\Users\\Dell\\Desktop\\Book-ai\\server.js:287:24)\n    at async C:\\Users\\Dell\\Desktop\\Book-ai\\server.js:537:29"}}
+{"timestamp":"2025-11-09T19:17:11.417Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":263,"total":479}}
+{"timestamp":"2025-11-09T19:17:11.421Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 1/3 for chunk 267","data":null}
+{"timestamp":"2025-11-09T19:17:11.769Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 1/3)","data":{"chunk":267,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:17:11.772Z","level":"INFO","bookName":"Sophie_s_World","message":"Retrying in 2000ms...","data":null}
+{"timestamp":"2025-11-09T19:17:13.787Z","level":"DEBUG","bookName":"Sophie_s_World","message":"API call attempt 2/3 for chunk 267","data":null}
+{"timestamp":"2025-11-09T19:17:14.205Z","level":"ERROR","bookName":"Sophie_s_World","message":"API call failed (attempt 2/3)","data":{"chunk":267,"error":"Request failed with status code 429"}}
+{"timestamp":"2025-11-09T19:17:14.207Z","level":"INFO","bookName":"Sophie_s_World","message":"Retrying in 4000ms...","data":null}
