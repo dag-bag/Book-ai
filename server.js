@@ -23,14 +23,12 @@ const CONFIG = {
   maxRetries: 3,
   retryDelay: 2000,
   requestTimeout: 300000,
-  batchDelay: 1000,
+  // batchDelay: 1000,
   ollamaUrl: "http://127.0.0.1:11434/api/generate",
   ollamaModel: "deepseek-v3.1:671b-cloud",
   autoBackup: true,
   backupInterval: 10, // Backup every 10 chunks
-  rotateIP: true,
-  proxyService: "free-proxy-list",
-  rotateAfterChunks: 5,
+  batchDelay: 2500,
 };
 
 // Initialize directories
@@ -208,65 +206,90 @@ async function createBackup(bookName, chunkNumber) {
   }
 }
 
-// Get current proxy agent
-function getProxyAgent() {
-  if (!CONFIG.rotateIP || CONFIG.proxyService === "none") {
+// Fetch FAST free proxies from multiple sources
+async function fetchFastProxies() {
+  console.log("🔍 Fetching fast free proxies...");
+
+  try {
+    // Method 1: ProxyScrape API (Fast & Reliable)
+    const response = await axios.get(ROTATING_PROXY_APIS.proxyScrape, {
+      timeout: 10000,
+    });
+
+    const proxies = response.data
+      .split("\n")
+      .filter((p) => p.trim())
+      .slice(0, 30) // Top 30 fastest
+      .map((proxy) => {
+        const [host, port] = proxy.split(":");
+        return { host: host.trim(), port: parseInt(port) };
+      });
+
+    proxyList = [...FAST_FREE_PROXIES, ...proxies];
+    console.log(`✅ Loaded ${proxyList.length} fast proxies`);
+  } catch (error) {
+    console.log("⚠️  API fetch failed, using default fast proxies");
+    proxyList = FAST_FREE_PROXIES;
+  }
+}
+
+// Get working proxy with health check
+async function getWorkingProxy() {
+  if (proxyList.length === 0) {
     return null;
   }
 
-  if (CONFIG.proxyService === "tor") {
-    const proxy = PROXY_SOURCES.tor;
-    const proxyUrl = `socks5://${proxy.host}:${proxy.port}`;
-    return new SocksProxyAgent(proxyUrl);
+  // Try current proxy
+  let attempts = 0;
+  while (attempts < proxyList.length) {
+    const proxy = proxyList[currentProxyIndex];
+
+    try {
+      // Quick health check (1 second timeout)
+      const proxyUrl = `http://${proxy.host}:${proxy.port}`;
+      const agent = new HttpsProxyAgent.HttpsProxyAgent(proxyUrl);
+
+      await axios.get("https://cloudflare.com/cdn-cgi/trace", {
+        httpsAgent: agent,
+        timeout: 2000, // 2 second timeout for health check
+      });
+
+      // Proxy works!
+      return agent;
+    } catch (error) {
+      // Proxy failed, try next one
+      console.log(
+        `⚠️  Proxy ${proxy.host}:${proxy.port} failed, trying next...`
+      );
+      currentProxyIndex = (currentProxyIndex + 1) % proxyList.length;
+      attempts++;
+    }
   }
 
-  // Free proxy list rotation
-  if (PROXY_SOURCES.freeProxyList.length > 0) {
-    const proxy = PROXY_SOURCES.freeProxyList[currentProxyIndex];
-    const proxyUrl = `http://${proxy.host}:${proxy.port}`;
-    return new HttpsProxyAgent.HttpsProxyAgent(proxyUrl);
-  }
-
+  console.log("⚠️  All proxies failed, using direct connection");
   return null;
+}
+
+// Get proxy agent (fast method)
+function getProxyAgent() {
+  if (!CONFIG.rotateIP) {
+    return null;
+  }
+
+  if (proxyList.length === 0) {
+    return null;
+  }
+
+  const proxy = proxyList[currentProxyIndex];
+  const proxyUrl = `http://${proxy.host}:${proxy.port}`;
+  return new HttpsProxyAgent.HttpsProxyAgent(proxyUrl);
 }
 
 // Rotate to next proxy
 function rotateProxy() {
-  if (CONFIG.proxyService === "tor") {
-    // TOR automatically rotates circuits
-    console.log("🔄 TOR circuit will rotate automatically");
-    return;
-  }
-
-  // Rotate through free proxy list
-  currentProxyIndex =
-    (currentProxyIndex + 1) % PROXY_SOURCES.freeProxyList.length;
-  console.log(`🔄 Rotated to proxy #${currentProxyIndex + 1}`);
-}
-
-// Fetch free proxies (fallback option)
-async function fetchFreeProxies() {
-  try {
-    // Using free-proxy-list.net API
-    const response = await axios.get(
-      "https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=5000&country=all&ssl=all&anonymity=all"
-    );
-    const proxies = response.data
-      .split("\n")
-      .filter((p) => p.trim())
-      .slice(0, 20);
-
-    PROXY_SOURCES.freeProxyList = proxies.map((proxy) => {
-      const [host, port] = proxy.split(":");
-      return { host, port, type: "http" };
-    });
-
-    console.log(
-      `✅ Fetched ${PROXY_SOURCES.freeProxyList.length} free proxies`
-    );
-  } catch (error) {
-    console.log("⚠️  Failed to fetch free proxies, continuing without proxy");
-  }
+  currentProxyIndex = (currentProxyIndex + 1) % proxyList.length;
+  const proxy = proxyList[currentProxyIndex];
+  console.log(`🔄 Rotated to proxy: ${proxy.host}:${proxy.port}`);
 }
 
 // Retry mechanism for API calls
