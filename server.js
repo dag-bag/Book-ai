@@ -23,12 +23,11 @@ const CONFIG = {
   maxRetries: 3,
   retryDelay: 2000,
   requestTimeout: 300000,
-  // batchDelay: 1000,
+  batchDelay: 2500,
   ollamaUrl: "http://127.0.0.1:11434/api/generate",
   ollamaModel: "deepseek-v3.1:671b-cloud",
   autoBackup: true,
   backupInterval: 10, // Backup every 10 chunks
-  batchDelay: 2500,
 };
 
 // Initialize directories
