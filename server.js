@@ -3,7 +3,6 @@ const axios = require("axios");
 const fs = require("fs").promises;
 const path = require("path");
 const crypto = require("crypto");
-const { buildTranslationPrompt } = require("./prompt");
 
 const app = express();
 const PORT = 3000;
@@ -23,7 +22,7 @@ const CONFIG = {
   maxRetries: 3,
   retryDelay: 2000,
   requestTimeout: 300000,
-  batchDelay: 2500,
+  batchDelay: 1000,
   ollamaUrl: "http://127.0.0.1:11434/api/generate",
   ollamaModel: "deepseek-v3.1:671b-cloud",
   autoBackup: true,
@@ -205,92 +204,6 @@ async function createBackup(bookName, chunkNumber) {
   }
 }
 
-// Fetch FAST free proxies from multiple sources
-async function fetchFastProxies() {
-  console.log("🔍 Fetching fast free proxies...");
-
-  try {
-    // Method 1: ProxyScrape API (Fast & Reliable)
-    const response = await axios.get(ROTATING_PROXY_APIS.proxyScrape, {
-      timeout: 10000,
-    });
-
-    const proxies = response.data
-      .split("\n")
-      .filter((p) => p.trim())
-      .slice(0, 30) // Top 30 fastest
-      .map((proxy) => {
-        const [host, port] = proxy.split(":");
-        return { host: host.trim(), port: parseInt(port) };
-      });
-
-    proxyList = [...FAST_FREE_PROXIES, ...proxies];
-    console.log(`✅ Loaded ${proxyList.length} fast proxies`);
-  } catch (error) {
-    console.log("⚠️  API fetch failed, using default fast proxies");
-    proxyList = FAST_FREE_PROXIES;
-  }
-}
-
-// Get working proxy with health check
-async function getWorkingProxy() {
-  if (proxyList.length === 0) {
-    return null;
-  }
-
-  // Try current proxy
-  let attempts = 0;
-  while (attempts < proxyList.length) {
-    const proxy = proxyList[currentProxyIndex];
-
-    try {
-      // Quick health check (1 second timeout)
-      const proxyUrl = `http://${proxy.host}:${proxy.port}`;
-      const agent = new HttpsProxyAgent.HttpsProxyAgent(proxyUrl);
-
-      await axios.get("https://cloudflare.com/cdn-cgi/trace", {
-        httpsAgent: agent,
-        timeout: 2000, // 2 second timeout for health check
-      });
-
-      // Proxy works!
-      return agent;
-    } catch (error) {
-      // Proxy failed, try next one
-      console.log(
-        `⚠️  Proxy ${proxy.host}:${proxy.port} failed, trying next...`
-      );
-      currentProxyIndex = (currentProxyIndex + 1) % proxyList.length;
-      attempts++;
-    }
-  }
-
-  console.log("⚠️  All proxies failed, using direct connection");
-  return null;
-}
-
-// Get proxy agent (fast method)
-function getProxyAgent() {
-  if (!CONFIG.rotateIP) {
-    return null;
-  }
-
-  if (proxyList.length === 0) {
-    return null;
-  }
-
-  const proxy = proxyList[currentProxyIndex];
-  const proxyUrl = `http://${proxy.host}:${proxy.port}`;
-  return new HttpsProxyAgent.HttpsProxyAgent(proxyUrl);
-}
-
-// Rotate to next proxy
-function rotateProxy() {
-  currentProxyIndex = (currentProxyIndex + 1) % proxyList.length;
-  const proxy = proxyList[currentProxyIndex];
-  console.log(`🔄 Rotated to proxy: ${proxy.host}:${proxy.port}`);
-}
-
 // Retry mechanism for API calls
 async function callOllamaWithRetry(
   prompt,
@@ -339,6 +252,172 @@ async function callOllamaWithRetry(
       await Logger.log(bookName, "INFO", `Retrying in ${delay}ms...`);
       await new Promise((resolve) => setTimeout(resolve, delay));
     }
+  }
+}
+
+// Create hourly audio chunks for TTS
+async function createHourlyChunks(bookName) {
+  try {
+    console.log(`\n📚 Processing: ${bookName}`);
+
+    const translationFile = path.join(
+      OUTPUT_DIR,
+      `${bookName}_translation.txt`
+    );
+
+    // Check if file exists
+    try {
+      await fs.access(translationFile);
+    } catch (error) {
+      throw new Error(`Translation file not found: ${translationFile}`);
+    }
+
+    console.log(`📄 Reading translation file...`);
+    const fullText = await fs.readFile(translationFile, "utf8");
+
+    if (!fullText || fullText.trim().length === 0) {
+      throw new Error("Translation file is empty");
+    }
+
+    // Remove header lines (lines starting with #)
+    console.log(`🧹 Cleaning text...`);
+    const textLines = fullText.split("\n");
+    const contentStart = textLines.findIndex(
+      (line) => line.trim() && !line.trim().startsWith("#")
+    );
+    const cleanText = textLines
+      .slice(contentStart >= 0 ? contentStart : 0)
+      .join("\n")
+      .trim();
+
+    if (cleanText.length === 0) {
+      throw new Error("No content found after cleaning");
+    }
+
+    console.log(`📊 Text length: ${cleanText.length} characters`);
+
+    // Calculate chunks for 1 hour audio
+    // Average Hindi TTS: ~150 characters per minute
+    // 1 hour = 60 minutes = ~9000 characters
+    const CHARS_PER_HOUR = 9000;
+
+    console.log(
+      `✂️  Splitting into hourly chunks (~${CHARS_PER_HOUR} chars each)...`
+    );
+
+    // Split by Hindi sentence separator (।) and also handle English periods
+    const sentences = cleanText
+      .split(/[।.]+/)
+      .map((s) => s.trim())
+      .filter((s) => s.length > 0);
+
+    console.log(`📝 Found ${sentences.length} sentences`);
+
+    const hourlyChunks = [];
+    let currentChunk = "";
+    let chunkNumber = 1;
+
+    for (let i = 0; i < sentences.length; i++) {
+      const sentence = sentences[i];
+      // Add back the separator (। for Hindi, . for English)
+      const separator = cleanText.includes("।") ? "।" : ".";
+      const sentenceWithSeparator = sentence + separator + " ";
+
+      // If adding this sentence exceeds hour limit and we have content
+      if (
+        currentChunk.length + sentenceWithSeparator.length > CHARS_PER_HOUR &&
+        currentChunk.length > 0
+      ) {
+        hourlyChunks.push({
+          number: chunkNumber++,
+          text: currentChunk.trim(),
+          charCount: currentChunk.length,
+          estimatedMinutes: Math.round(currentChunk.length / 150),
+        });
+        console.log(
+          `✅ Created chunk ${chunkNumber - 1}: ${
+            currentChunk.length
+          } chars, ~${Math.round(currentChunk.length / 150)} min`
+        );
+        currentChunk = sentenceWithSeparator;
+      } else {
+        currentChunk += sentenceWithSeparator;
+      }
+    }
+
+    // Add last chunk
+    if (currentChunk.trim()) {
+      hourlyChunks.push({
+        number: chunkNumber,
+        text: currentChunk.trim(),
+        charCount: currentChunk.length,
+        estimatedMinutes: Math.round(currentChunk.length / 150),
+      });
+      console.log(
+        `✅ Created chunk ${chunkNumber}: ${
+          currentChunk.length
+        } chars, ~${Math.round(currentChunk.length / 150)} min`
+      );
+    }
+
+    console.log(`\n📦 Total chunks created: ${hourlyChunks.length}`);
+
+    // Create book folder
+    const bookFolder = path.join(OUTPUT_DIR, bookName);
+    console.log(`📁 Creating folder: ${bookFolder}`);
+    await fs.mkdir(bookFolder, { recursive: true });
+
+    // Save each hourly chunk
+    console.log(`💾 Saving chunk files...`);
+    for (const chunk of hourlyChunks) {
+      const chunkFile = path.join(
+        bookFolder,
+        `${bookName}_hour_${String(chunk.number).padStart(2, "0")}.txt`
+      );
+
+      const chunkContent = `# ${bookName} - Hour ${chunk.number}
+# Characters: ${chunk.charCount}
+# Estimated Duration: ${chunk.estimatedMinutes} minutes
+# Generated: ${new Date().toISOString()}
+
+${chunk.text}`;
+
+      await fs.writeFile(chunkFile, chunkContent, "utf8");
+    }
+
+    // Create metadata file
+    console.log(`📋 Creating metadata file...`);
+    const metadataFile = path.join(bookFolder, "metadata.json");
+    const totalMinutes = Math.round(cleanText.length / 150);
+    const metadata = {
+      bookName,
+      totalChunks: hourlyChunks.length,
+      totalCharacters: cleanText.length,
+      totalEstimatedMinutes: totalMinutes,
+      totalEstimatedHours: (totalMinutes / 60).toFixed(2),
+      chunks: hourlyChunks.map((c) => ({
+        number: c.number,
+        charCount: c.charCount,
+        estimatedMinutes: c.estimatedMinutes,
+        fileName: `${bookName}_hour_${String(c.number).padStart(2, "0")}.txt`,
+      })),
+      createdAt: new Date().toISOString(),
+    };
+
+    await fs.writeFile(metadataFile, JSON.stringify(metadata, null, 2), "utf8");
+
+    return {
+      success: true,
+      bookFolder,
+      metadata,
+    };
+  } catch (error) {
+    console.error(`❌ Error in createHourlyChunks: ${error.message}`);
+    console.error(error.stack);
+    return {
+      success: false,
+      error: error.message,
+    };
   }
 }
 

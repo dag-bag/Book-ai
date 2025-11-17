@@ -1,0 +1,5 @@
+{"timestamp":"2025-11-13T17:25:23.455Z","level":"INFO","bookName":"Sophie_s_World","message":"Translation process started","data":null}
+{"timestamp":"2025-11-13T17:25:23.494Z","level":"INFO","bookName":"Sophie_s_World","message":"RESUME MODE ACTIVATED","data":{"total":479,"completed":479,"remaining":0}}
+{"timestamp":"2025-11-13T17:25:23.679Z","level":"DEBUG","bookName":"Sophie_s_World","message":"Progress saved","data":{"completed":479,"total":479}}
+{"timestamp":"2025-11-13T17:25:23.698Z","level":"INFO","bookName":"Sophie_s_World","message":"Backup created at chunk final","data":null}
+{"timestamp":"2025-11-13T17:25:23.702Z","level":"SUCCESS","bookName":"Sophie_s_World","message":"Translation completed successfully","data":null}
